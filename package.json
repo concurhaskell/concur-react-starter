@@ -1,0 +1,9 @@
+{
+  "name": "myproject",
+  "version": "1.0.0",
+  "description": "Project description here.",
+  "main": "index.js",
+  "author": "My Name",
+  "license": "BSD3",
+  "dependencies": {}
+}
