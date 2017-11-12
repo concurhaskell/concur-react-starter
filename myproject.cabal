@@ -1,8 +1,13 @@
+-- This file has been generated from package.yaml by hpack version 0.18.1.
+--
+-- see: https://github.com/sol/hpack
+
 name:                myproject
 version:             0.1.0.0
 synopsis:            Project synopsis here
 description:         Project description here
-homepage:            https://github.com/myname/myproject
+homepage:            https://github.com/myname/myproject#readme
+bug-reports:         https://github.com/myname/myproject/issues
 license:             BSD3
 license-file:        LICENSE
 author:              My Name
@@ -10,34 +15,38 @@ maintainer:          myname@example.org
 copyright:           2017 My Name
 category:            Web
 build-type:          Simple
-extra-source-files:  README.md
-cabal-version:       >=1.10
+cabal-version:       >= 1.10
 
-executable myproj
-  ghc-options:         -Wall -ferror-spans
-  js-sources:          jsbits/index.compiled.js
-  hs-source-dirs:      src
-  main-is:             Main.hs
-  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
-  build-depends:       base
-                     , stm >= 2.4
-                     , mtl >= 2.2
-                     , free >= 4.12
-                     , transformers >= 0.5
-                     , concur-core
-                     , concur-react
-
-  if impl(ghcjs)
-    hs-source-dirs: src-ghcjs
-    build-depends:
-      ghcjs-base
-  else
-    hs-source-dirs: src-ghc
-    build-depends:
-      ghcjs-base-stub >= 0.1
-
-  default-language:    Haskell2010
+extra-source-files:
+    README.md
 
 source-repository head
-  type:     git
+  type: git
   location: https://github.com/myname/myproject
+
+executable myproj
+  ghc-options: -Wall -ferror-spans -threaded -rtsopts -with-rtsopts=-N
+  js-sources:
+      jsbits/index.compiled.js
+  hs-source-dirs:
+      src
+  main-is: Main.hs
+  build-depends:
+      base
+    , stm >=2.4
+    , mtl >=2.2
+    , free >=4.12
+    , transformers >=0.5
+    , concur-core
+    , concur-react
+  if impl(ghcjs -any)
+    hs-source-dirs:
+        src-ghcjs
+    build-depends:
+        ghcjs-base
+  else
+    hs-source-dirs:
+        src-ghc
+    build-depends:
+        ghcjs-base-stub >=0.1
+  default-language: Haskell2010

@@ -1,0 +1,41 @@
+name: myproject
+version: '0.1.0.0'
+synopsis: Project synopsis here
+description: Project description here
+category: Web
+author: My Name
+maintainer: myname@example.org
+copyright: 2017 My Name
+license: BSD3
+github: myname/myproject
+extra-source-files:
+- README.md
+ghc-options:
+- -Wall
+- -ferror-spans
+- -threaded
+- -rtsopts
+- -with-rtsopts=-N
+dependencies:
+- base
+- stm >=2.4
+- mtl >=2.2
+- free >=4.12
+- transformers >=0.5
+- concur-core
+- concur-react
+executables:
+  myproj:
+    js-sources: jsbits/index.compiled.js
+    main: Main.hs
+    source-dirs: src
+    when:
+    - condition: impl(ghcjs -any)
+      then:
+        source-dirs: src-ghcjs
+        dependencies:
+        - ghcjs-base
+      else:
+        source-dirs: src-ghc
+        dependencies:
+        - ghcjs-base-stub >=0.1

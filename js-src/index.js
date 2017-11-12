@@ -1,4 +1,6 @@
-// Import any JS libs here. E.g. -
+// These are needed for Concur-React
+import * as react from 'react';
+import * as reactDom from 'react-dom';
+export { react, reactDom };
 
-// import SortableTree from 'react-sortable-tree';
-// export { SortableTree };
+// Add any more libraries here
