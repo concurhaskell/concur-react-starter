@@ -3,7 +3,7 @@ packages:
 - location: .
 - location:
     git: https://github.com/ajnsit/concur
-    commit: 06f8b226935bad2bfd4c6b8b6a76cfab730988aa
+    commit: 3df03de99652433c0a147726f206ef3336e610b4
   extra-dep: true
   subdirs:
     - concur-core

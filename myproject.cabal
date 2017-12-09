@@ -1,6 +1,8 @@
--- This file has been generated from package.yaml by hpack version 0.18.1.
+-- This file has been generated from package.yaml by hpack version 0.20.0.
 --
 -- see: https://github.com/sol/hpack
+--
+-- hash: 78687488a8d5459d9bf253bf438c29396221028090fcc6987e4c48c9c372507e
 
 name:                myproject
 version:             0.1.0.0
@@ -33,12 +35,12 @@ executable myproj
   main-is: Main.hs
   build-depends:
       base
-    , stm >=2.4
-    , mtl >=2.2
-    , free >=4.12
-    , transformers >=0.5
     , concur-core
     , concur-react
+    , free >=4.12
+    , mtl >=2.2
+    , stm >=2.4
+    , transformers >=0.5
   if impl(ghcjs -any)
     hs-source-dirs:
         src-ghcjs
@@ -49,4 +51,6 @@ executable myproj
         src-ghc
     build-depends:
         ghcjs-base-stub >=0.1
+  other-modules:
+      Paths_myproject
   default-language: Haskell2010
