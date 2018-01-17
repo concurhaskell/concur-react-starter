@@ -1,6 +1,6 @@
 // These are needed for Concur-React
-import * as react from 'react';
-import * as reactDom from 'react-dom';
-export { react, reactDom };
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+export { React, ReactDOM };
 
 // Add any more libraries here
